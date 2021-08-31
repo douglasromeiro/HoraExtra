@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HoraExtra.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Lista de Funcionarios";
+}
+
+<script type="text/javascript">
+
+
+</script>
+
+<h1>Lista de Funcionarios</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+               R$ @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            <td>
+                <a button type="button" class="btn btn-info" asp-action="AtualizarFuncionario" asp-route-id="@item.Id">Editar</a> |
+                <a button class="btn btn-danger" type="button" asp-action="ExcluirFuncionario" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
