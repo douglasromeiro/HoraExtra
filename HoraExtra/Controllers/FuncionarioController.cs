@@ -35,6 +35,9 @@ namespace HoraExtra.Controllers
         [HttpPost]
         public async Task<IActionResult> CadastrarFuncionario(Funcionario funcionario)
         {
+            float salarioConvertido = (float)float.Parse(funcionario.SalarioMascara);
+            funcionario.Salario = salarioConvertido;
+
             if (ModelState.IsValid)
             {
                 contexto.Add(funcionario);

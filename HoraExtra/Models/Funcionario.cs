@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HoraExtra.Models
 {
@@ -11,6 +12,10 @@ namespace HoraExtra.Models
         public string RG { get; set; }
         public string Endereco { get; set; }
         public float Salario { get; set; }
+
+        [NotMapped]
+        public string SalarioMascara { get; set; }
+
 
         public Funcionario(string nome, string telefone, string rg, string endereco, float salario)
         {
