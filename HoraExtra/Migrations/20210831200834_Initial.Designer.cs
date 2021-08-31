@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoraExtra.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210831172208_Recovery")]
-    partial class Recovery
+    [Migration("20210831200834_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,8 +36,8 @@ namespace HoraExtra.Migrations
                     b.Property<string>("RG")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Salario")
-                        .HasColumnType("float");
+                    b.Property<float>("Salario")
+                        .HasColumnType("real");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");

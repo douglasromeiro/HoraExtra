@@ -34,8 +34,8 @@ namespace HoraExtra.Migrations
                     b.Property<string>("RG")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Salario")
-                        .HasColumnType("float");
+                    b.Property<float>("Salario")
+                        .HasColumnType("real");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");

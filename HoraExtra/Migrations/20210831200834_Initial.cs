@@ -2,7 +2,7 @@
 
 namespace HoraExtra.Migrations
 {
-    public partial class Recovery : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,6 +13,14 @@ namespace HoraExtra.Migrations
                 nullable: true,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)");
+
+            migrationBuilder.AlterColumn<float>(
+                name: "Salario",
+                table: "Funcionario",
+                type: "real",
+                nullable: false,
+                oldClrType: typeof(double),
+                oldType: "float");
 
             migrationBuilder.AlterColumn<string>(
                 name: "RG",
@@ -50,6 +58,14 @@ namespace HoraExtra.Migrations
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)",
                 oldNullable: true);
+
+            migrationBuilder.AlterColumn<double>(
+                name: "Salario",
+                table: "Funcionario",
+                type: "float",
+                nullable: false,
+                oldClrType: typeof(float),
+                oldType: "real");
 
             migrationBuilder.AlterColumn<string>(
                 name: "RG",

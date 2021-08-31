@@ -129,10 +129,7 @@ D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.TagHelpers.in
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.TagHelpers.output.cache
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.RazorCoreGenerate.cache
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\AtualizarFuncionario.cshtml.g.cs
-D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\Beneficios.cshtml.g.cs
-D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\CadastrarFuncionario.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\ExcluirFuncionario.cshtml.g.cs
-D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\Index.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Home\Cadastro.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Home\teste_Index.cshtml.g.cs
@@ -150,3 +147,7 @@ D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\ref\HoraExtra.dll
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.pdb
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.genruntimeconfig.cache
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.csproj.AssemblyReference.cache
+D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Home\Beneficios.cshtml.g.cs
+D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\Index.cshtml.g.cs
+D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\CadastrarFuncionarioold.cshtml.g.cs
+D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\CadastrarFuncionario.cshtml.g.cs

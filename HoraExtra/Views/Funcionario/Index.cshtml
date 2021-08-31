@@ -4,12 +4,8 @@
     ViewData["Title"] = "Lista de Funcionarios";
 }
 
-<script type="text/javascript">
-
-
-</script>
-
 <h1>Lista de Funcionarios</h1>
+
 
 <table class="table">
     <thead>
@@ -51,8 +47,8 @@
                R$ @Html.DisplayFor(modelItem => item.Salario)
             </td>
             <td>
-                <a button type="button" class="btn btn-info" asp-action="AtualizarFuncionario" asp-route-id="@item.Id">Editar</a> |
-                <a button class="btn btn-danger" type="button" asp-action="ExcluirFuncionario" asp-route-id="@item.Id">Deletar</a>
+                <a button type="button" class="btn btn-info" asp-action="EditarFuncionario" asp-route-id="@item.Id">Editar</a> |
+                <a button type="button" class="btn btn-danger" asp-action="ExcluirFuncionario" asp-route-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
