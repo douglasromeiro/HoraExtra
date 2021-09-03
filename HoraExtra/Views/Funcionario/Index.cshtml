@@ -29,28 +29,29 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RG)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-               R$ @Html.DisplayFor(modelItem => item.Salario)
-            </td>
-            <td>
-                <a button type="button" class="btn btn-info" asp-action="EditarFuncionario" asp-route-id="@item.Id">Editar</a> |
-                <a button type="button" class="btn btn-danger" asp-action="ExcluirFuncionario" asp-route-id="@item.Id">Excluir</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    R$ @Html.DisplayFor(modelItem => item.Salario)
+                </td>
+                <td>
+                    <a button type="button" class="btn btn-info" asp-action="AtualizarFuncionario" asp-route-id="@item.Id">Editar</a> |
+                    <a button type="button" class="btn btn-danger" asp-action="ExcluirFuncionario" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

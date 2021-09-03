@@ -147,6 +147,6 @@ D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\ref\HoraExtra.dll
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.pdb
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.genruntimeconfig.cache
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\HoraExtra.csproj.AssemblyReference.cache
-D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Home\Beneficios.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\Index.cshtml.g.cs
 D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\CadastrarFuncionario.cshtml.g.cs
+D:\Projetos ASP.NET\HoraExtra\HoraExtra\obj\Debug\net5.0\Razor\Views\Funcionario\Beneficios.cshtml.g.cs

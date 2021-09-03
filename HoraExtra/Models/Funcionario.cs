@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace HoraExtra.Models
 {
-    public class Funcionario
+    public class Funcionario : Beneficio
     {
         
         public int Id { get; set; }
@@ -29,6 +31,21 @@ namespace HoraExtra.Models
 
         public Funcionario()
         {
+        }
+
+        public float HoraExtra(int hora)
+        {
+            float porcentagem = 0.05f;
+
+            for(var i = 1; i < hora; i++)
+            {
+                porcentagem += 0.05f;
+            }
+
+            float extra = this.Salario * porcentagem;
+            Salario += extra;
+            return Salario;
+            
         }
     }
 }

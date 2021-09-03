@@ -1,5 +1,6 @@
 ﻿using HoraExtra.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,6 @@ namespace HoraExtra.Controllers
         }
 
         public async Task<IActionResult> Index()
-        {
-            return View(await contexto.Funcionario.ToListAsync());
-        }
-        public async Task<IActionResult> Beneficios()
         {
             return View(await contexto.Funcionario.ToListAsync());
         }
@@ -53,6 +50,7 @@ namespace HoraExtra.Controllers
             if (id != null)
             {
                 Funcionario funcionario = contexto.Funcionario.Find(id);
+                funcionario.SalarioMascara = Convert.ToString(funcionario.Salario);
                 return View(funcionario);
             }
             else return NotFound();
@@ -61,6 +59,7 @@ namespace HoraExtra.Controllers
         [HttpPost]
         public async Task<IActionResult> AtualizarFuncionario(int? id, Funcionario funcionario)
         {
+            funcionario.Salario = (float)float.Parse(funcionario.SalarioMascara);
             if (id != null)
             {
                 if (ModelState.IsValid)
@@ -86,7 +85,7 @@ namespace HoraExtra.Controllers
 
             else return NotFound();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> ExcluirFuncionario(int? id, Funcionario funcionario)
         {
@@ -98,6 +97,68 @@ namespace HoraExtra.Controllers
                 return RedirectToAction(nameof(Index));
             }
             else return NotFound();
+        }
+
+        public IActionResult Beneficios(int? id)
+        {
+            List<Funcionario> funcionarioList = new List<Funcionario>();
+
+            funcionarioList = (from product in contexto.Funcionario
+                               select product).ToList();
+
+            funcionarioList.Insert(0, new Funcionario { Id = 0, Nome = "Selecioce um Funcionario" });
+
+            ViewBag.ListFuncionarios = funcionarioList;
+            return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult Beneficios(Funcionario funcionario, int? hora)
+        {
+
+            // ------- Validation ------- //
+
+            if (funcionario.Id == 0)
+            {
+                ModelState.AddModelError("", "Selecioce um Funcionario");
+            }
+
+            // ------- Getting selected Value ------- //
+            int SelectValue = funcionario.Id;
+
+            ViewBag.SelectedValue = funcionario.Id;
+
+            funcionario = contexto.Funcionario.Find(ViewBag.SelectedValue);
+            
+
+            // ------- Setting Data back to ViewBag after Posting Form ------- //
+
+            List<Funcionario> funcionarioList = new List<Models.Funcionario>();
+
+            funcionarioList = (from product in contexto.Funcionario
+                           select product).ToList();
+
+            funcionarioList.Insert(0, new Funcionario { Id = 0, Nome = "Selecionar um Funcionario" });
+            ViewBag.ListFuncionarios = funcionarioList;
+            // ---------------------------------------------------------------- //
+            double salario = funcionario.Salario;
+            string salarioBase = salario.ToString("C");
+            ViewBag.salarioBase = salarioBase;
+            if (hora != null)
+            {
+                funcionario.HoraExtra((int)hora);
+                double salarioComBeneficio = Convert.ToDouble(funcionario.Salario);
+                double horaExtra = salarioComBeneficio - salario;
+                string salarioFormatado = salarioComBeneficio.ToString("C");
+                string beneficios = horaExtra.ToString("C");
+
+                ViewBag.horaExtra = hora;
+                ViewBag.recebidos = beneficios;
+                ViewBag.salario = salarioFormatado;
+
+            }
+            return View(funcionario);
         }
     }
 }

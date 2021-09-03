@@ -1,0 +1,72 @@
+﻿@model HoraExtra.Models.Funcionario
+@{
+    <form asp-controller="Funcionario" asp-action="Beneficios" method="post" class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="row">
+                <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <label asp-for="Nome" class="control-label"></label>
+                    <select asp-for="Id"
+                            class="form-control"
+                            asp-items="@(new SelectList(ViewBag.ListFuncionarios, "Id", "Nome"))"></select>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                <input id="Submit1" type="submit" value="Buscar" style="margin-top: 10px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    @if (ViewBag.SelectedValue != null)
+                    {
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                                <div class="card" style="width: 18rem;">
+                                                    <div>
+                                                        <div class="card-body">
+                                                            <h5>@Html.DisplayFor(model => model.Nome)</h5>
+                                                            <p class="card-text">
+                                                                @using (@Html.BeginForm())
+                                                                {
+                                                                    <label>Horas Extra</label>
+                                                                    
+                                                                <input type="number" name="hora" style="width: 80px;" />
+                                                                    <input id="submit" type="submit" value="Calcular" style="margin-top: 10px;" />
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item">Telefone: @Html.DisplayFor(model => model.Telefone)</li>
+                                                            <li class="list-group-item">RG: @Html.DisplayFor(model => model.RG)</li>
+                                                            <li class="list-group-item">Endereço: @Html.DisplayFor(model => model.Endereco)</li>
+                                                            <li class="list-group-item">Salario: @ViewBag.salarioBase</li>
+                                                            @if (ViewBag.salario != null) { 
+                                                            <li class="list-group-item">Horas: @ViewBag.horaExtra</li>
+                                                            <li class="list-group-item">Recebidos: R$ @ViewBag.recebidos</li>
+                                                            <li class="list-group-item">Total: R$ @ViewBag.salario</li>
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+}
