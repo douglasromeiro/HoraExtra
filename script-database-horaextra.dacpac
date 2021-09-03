@@ -1,0 +1,11 @@
+CREATE DATABASE HoraExtra;
+
+CREATE TABLE Funcionario (
+    Id       INT            IDENTITY (1, 1) NOT NULL,
+    Nome     NVARCHAR (MAX) NULL,
+    Telefone NVARCHAR (MAX) NULL,
+    RG      NVARCHAR (MAX) NULL,
+    Endereco NVARCHAR (MAX) NULL,
+    Salario  REAL           NOT NULL,
+    CONSTRAINT [PK_Funcionario] PRIMARY KEY CLUSTERED ([Id] ASC)
+);

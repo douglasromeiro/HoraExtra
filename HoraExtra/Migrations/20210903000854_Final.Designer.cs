@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HoraExtra.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20210831200834_Initial")]
-    partial class Initial
+    [Migration("20210903000854_Final")]
+    partial class Final
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

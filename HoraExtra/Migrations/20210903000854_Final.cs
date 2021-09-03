@@ -2,7 +2,7 @@
 
 namespace HoraExtra.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Final : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,11 +12,11 @@ namespace HoraExtra.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RG = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Salario = table.Column<double>(type: "float", nullable: false)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RG = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Salario = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {

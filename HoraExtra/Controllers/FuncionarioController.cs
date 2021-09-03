@@ -106,7 +106,7 @@ namespace HoraExtra.Controllers
             funcionarioList = (from product in contexto.Funcionario
                                select product).ToList();
 
-            funcionarioList.Insert(0, new Funcionario { Id = 0, Nome = "Selecioce um Funcionario" });
+            funcionarioList.Insert(0, new Funcionario { Id = 0, Nome = "Selecione um Funcionario" });
 
             ViewBag.ListFuncionarios = funcionarioList;
             return View();
